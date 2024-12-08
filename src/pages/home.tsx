@@ -35,7 +35,8 @@ export function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url("src/assets/home_building.avif")',
+            backgroundImage:
+              'url("https://caayushandco.s3.ap-south-1.amazonaws.com/assets/home_building.avif")',
             opacity: 0.5,
           }}
         />
