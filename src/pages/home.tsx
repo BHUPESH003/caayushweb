@@ -4,8 +4,53 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import AyushImg from "../assets/Ayush_Ahuja.jpeg";
+import TextInput from "@/components/ui/TextInput";
+import { useState } from "react";
+import axios from "axios";
 
 export function HomePage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const payload = {
+      fullName: name,
+      email,
+      message,
+    };
+    console.log(payload);
+    console.log(import.meta.env.VITE_API_URL);
+    try {
+      // Send the form data to the server
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/submit`,
+        payload
+      );
+
+      // Handle successful response
+      console.log("Submit Response:", response.data);
+      alert(response.data.message);
+      // Clear form fields after successful submission
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error: any) {
+      // Handle errors
+      console.error(
+        "Error submitting data:",
+        error.response?.data || error.message
+      );
+      alert("Failed to submit the form. Please try again.");
+    }
+  };
+
   const services = [
     {
       title: "Direct Taxes",
@@ -53,16 +98,25 @@ export function HomePage() {
 
           <div className="mt-12 max-w-md">
             <h3 className="text-xl mb-4">Subscribe for Updates</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <Input
                 type="text"
                 placeholder="Full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="bg-transparent border-white/20"
               />
               <Input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-transparent border-white/20"
+              />
+              <TextInput
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Enter your Message"
               />
               <Button className="w-full bg-purple-600 hover:bg-purple-700">
                 Subscribe

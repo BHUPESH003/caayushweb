@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TeamMemberPopup } from "@/components/team-member-popup";
-import AyushImg from "../assets/staff_1.webp";
+import AyushImg from "../assets/Ayush_img.jpeg";
+import NarenderImg from "../assets/Narender_Kumar.jpeg";
 
 interface TeamMember {
   name: string;
@@ -14,53 +15,53 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Ryan Pitt - Francis & Co",
-    position: "VP, Product Marketing",
+    name: "Ayush Ahuja",
+    position: "C.A., Firm Director",
     image: AyushImg,
     description:
-      "Ryan is an experienced product marketing professional with a passion for driving growth and innovation. With over a decade of experience in the tech industry, he has successfully launched and marketed numerous products, consistently exceeding revenue targets.",
-    linkedin: "https://www.linkedin.com/in/ryan-pitt",
+      "C.A. Ayush Ahuja as a sole proprietor in the year 2019. Since incepƟon, he has served clients with principles of hard work and integrity. He believed in having a practical approach and ensured all assignments reached their logical conclusion. He has been the guiding force of the team with his varied experience of over 8 years in the field of accounting, auditing, taxation, advisory, management and legal consultancy. Today, as a C.A. firm, we have an edge due to the unification of experience and youth. Each member specializes in a different area of the profession which gives the clients an advantage of specialization under a single roof. Over the past years the firm has built its reputation and stands tall as one of the trusted C.A. firms.",
+    linkedin: "https://in.linkedin.com/in/ca-ayush-ahuja-39a34b1a7",
   },
   {
-    name: "Lea Johnson - Gracier.io",
-    position: "Head of Customer Care",
-    image: AyushImg,
+    name: "Narender Kumar ",
+    position: "Company Secretary",
+    image: NarenderImg,
     description:
-      "Lea is a customer-centric leader with a proven track record of building and managing high-performing support teams. Her innovative approaches to customer care have resulted in industry-leading satisfaction rates and customer retention.",
-    linkedin: "https://www.linkedin.com/in/lea-johnson",
+      "Narender Kumar  is a well-known Practising Company Secretary who has been practising since 2014. Enriched with experience of over one & half decades. During these many years of gruelling, penetrating & successful experience in the Secretarial & Legal fields, Narender Kumar earned enviable reputation of providing knowledge-based services to various clients in the fields of Corporate Laws & Compliances.",
+    linkedin: "https://in.linkedin.com/in/narender-kumar-5b872b30",
   },
-  {
-    name: "Jay Anthony - Trendall",
-    position: "Global Development Lead",
-    image: AyushImg,
-    description:
-      "Jay is a seasoned software engineer and development leader with expertise in scaling global teams. His technical acumen and strategic thinking have been instrumental in delivering complex projects across multiple markets.",
-    linkedin: "https://www.linkedin.com/in/jay-anthony",
-  },
-  {
-    name: "Sylvia Mortisova - BusDee",
-    position: "Talent Advisor, Founder",
-    image: AyushImg,
-    description:
-      "Sylvia is a visionary talent acquisition specialist and entrepreneur. Her unique approach to identifying and nurturing talent has helped numerous startups build world-class teams from the ground up.",
-    linkedin: "https://www.linkedin.com/in/sylvia-mortisova",
-  },
-  {
-    name: "James Rivera - Moore.io",
-    position: "Vertical Marketing",
-    image: AyushImg,
-    description:
-      "James is a strategic marketer with deep expertise in vertical-specific solutions. His data-driven approach and industry insights have consistently delivered exceptional results across various sectors.",
-    linkedin: "https://www.linkedin.com/in/james-rivera",
-  },
-  {
-    name: "Jane O'hara - Neem.co",
-    position: "Head of People's Operations",
-    image: AyushImg,
-    description:
-      "Jane is an accomplished HR professional known for creating positive and productive work environments. Her innovative people-first strategies have resulted in high employee engagement and retention rates across multiple organizations.",
-    linkedin: "https://www.linkedin.com/in/jane-ohara",
-  },
+  // {
+  //   name: "Jay Anthony - Trendall",
+  //   position: "Global Development Lead",
+  //   image: AyushImg,
+  //   description:
+  //     "Jay is a seasoned software engineer and development leader with expertise in scaling global teams. His technical acumen and strategic thinking have been instrumental in delivering complex projects across multiple markets.",
+  //   linkedin: "https://www.linkedin.com/in/jay-anthony",
+  // },
+  // {
+  //   name: "Sylvia Mortisova - BusDee",
+  //   position: "Talent Advisor, Founder",
+  //   image: AyushImg,
+  //   description:
+  //     "Sylvia is a visionary talent acquisition specialist and entrepreneur. Her unique approach to identifying and nurturing talent has helped numerous startups build world-class teams from the ground up.",
+  //   linkedin: "https://www.linkedin.com/in/sylvia-mortisova",
+  // },
+  // {
+  //   name: "James Rivera - Moore.io",
+  //   position: "Vertical Marketing",
+  //   image: AyushImg,
+  //   description:
+  //     "James is a strategic marketer with deep expertise in vertical-specific solutions. His data-driven approach and industry insights have consistently delivered exceptional results across various sectors.",
+  //   linkedin: "https://www.linkedin.com/in/james-rivera",
+  // },
+  // {
+  //   name: "Jane O'hara - Neem.co",
+  //   position: "Head of People's Operations",
+  //   image: AyushImg,
+  //   description:
+  //     "Jane is an accomplished HR professional known for creating positive and productive work environments. Her innovative people-first strategies have resulted in high employee engagement and retention rates across multiple organizations.",
+  //   linkedin: "https://www.linkedin.com/in/jane-ohara",
+  // },
 ];
 
 export function TeamPage() {
@@ -88,7 +89,9 @@ export function TeamPage() {
                       className="object-cover w-full h-full rounded-lg"
                     />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                  <h3 className="text-xl text-white font-bold mb-2">
+                    {member.name}
+                  </h3>
                   <p className="text-gray-400 mb-4">{member.position}</p>
                   <Button
                     className="bg-purple-600 hover:bg-purple-700"
