@@ -167,17 +167,21 @@ export function HomePage() {
                 About Ayush Ahuja & Co.
               </h2>
               <p className="text-gray-300 mb-4">
-                Ayush Ahuja & Co. is a leading chartered accountant firm
-                dedicated to providing comprehensive financial services. With
-                years of experience and a team of skilled professionals, we
-                offer innovative solutions tailored to meet the unique needs of
-                each client.
+                C.A. Ayush Ahuja as a sole proprietor in the year 2019. Since
+                incepƟon, he has served clients with principles of hard work and
+                integrity. He believed in having a practical approach and
+                ensured all assignments reached their logical conclusion. He has
+                been the guiding force of the team with his varied experience of
+                over 8 years in the field of accounting, auditing, taxation,
+                advisory, management and legal consultancy.
               </p>
               <p className="text-gray-300 mb-4">
-                Our expertise spans across various domains including taxation,
-                auditing, financial planning, and business advisory. We pride
-                ourselves on our commitment to excellence, integrity, and client
-                satisfaction.
+                Today, as a C.A. firm, we have an edge due to the unification of
+                experience and youth. Each member specializes in a different
+                area of the profession which gives the clients an advantage of
+                specialization under a single roof. Over the past years the firm
+                has built its reputation and stands tall as one of the trusted
+                C.A. firms.
               </p>
               <Link to="/who-we-are">
                 <Button
