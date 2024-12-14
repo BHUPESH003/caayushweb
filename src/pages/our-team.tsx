@@ -105,13 +105,14 @@ export function TeamPage() {
           </div>
         </div>
       </section>
-
-      {selectedMember && (
-        <TeamMemberPopup
-          member={selectedMember}
-          onClose={() => setSelectedMember(null)}
-        />
-      )}
+      <div style={{ overflowY: "auto" }}>
+        {selectedMember && (
+          <TeamMemberPopup
+            member={selectedMember}
+            onClose={() => setSelectedMember(null)}
+          />
+        )}
+      </div>
     </div>
   );
 }

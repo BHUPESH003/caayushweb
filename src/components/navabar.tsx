@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "../assets/Logo_brand.jpeg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +11,10 @@ export function Navbar() {
 
   const menuItems = [
     { title: "Who We Are", path: "/who-we-are" },
-    { title: "Our Services", path: "/services" },
-    { title: "Learning Modules", path: "/learning" },
+    // { title: "Our Services", path: "/services" },
+    { title: "Learning Modules", path: "/" },
     { title: "Our Team", path: "/team" },
-    { title: "Contact", path: "/contact" },
+    { title: "Contact", path: "/" },
   ];
 
   const handleClick = () => {
@@ -33,7 +34,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-white text-xl font-semibold">
-            AYUSH AHUJA <br />& CO.
+            <img src={logo} alt="Logo" className="w-16 h-14" />
           </Link>
 
           {/* Desktop Menu */}

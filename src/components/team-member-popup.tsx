@@ -12,11 +12,11 @@ interface TeamMemberPopupProps {
   member: TeamMember;
   onClose: () => void;
 }
-
 export function TeamMemberPopup({ member, onClose }: TeamMemberPopupProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-gray-900 p-6 rounded-lg max-w-2xl w-full mx-4">
+      {/* Outer scrollable container */}
+      <div className="bg-gray-900 p-6 rounded-lg max-w-2xl w-full mx-4 overflow-y-auto max-h-[90vh]">
         <div className="flex justify-between items-start mb-4">
           <h2 className="text-2xl font-bold">{member.name}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white">
