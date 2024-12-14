@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { TeamMemberPopup } from "@/components/team-member-popup";
 import AyushImg from "../assets/Ayush_img.jpeg";
 import NarenderImg from "../assets/Narender_Kumar.jpeg";
+import rohitImg from "../assets/CS_Rohit.jpeg";
 
 interface TeamMember {
   name: string;
@@ -30,14 +31,13 @@ const teamMembers: TeamMember[] = [
       "Narender Kumar  is a well-known Practising Company Secretary who has been practising since 2014. Enriched with experience of over one & half decades. During these many years of gruelling, penetrating & successful experience in the Secretarial & Legal fields, Narender Kumar earned enviable reputation of providing knowledge-based services to various clients in the fields of Corporate Laws & Compliances.",
     linkedin: "https://in.linkedin.com/in/narender-kumar-5b872b30",
   },
-  // {
-  //   name: "Jay Anthony - Trendall",
-  //   position: "Global Development Lead",
-  //   image: AyushImg,
-  //   description:
-  //     "Jay is a seasoned software engineer and development leader with expertise in scaling global teams. His technical acumen and strategic thinking have been instrumental in delivering complex projects across multiple markets.",
-  //   linkedin: "https://www.linkedin.com/in/jay-anthony",
-  // },
+  {
+    name: "CS Rohit Sharma",
+    position: "ACS , CMA (US), MCOM, MBA, LLB, B.Com, IFRS",
+    image: rohitImg,
+    description: `A dedicated and results-driven professional with a dual qualification in Company Secretaryship (CS) and Certified Management Accountant (CMA) - US, showcasing a strong blend of legal, financial, and strategic expertise. Adept at ensuring corporate compliance, governance, and risk management, while also excelling in financial planning, analysis, and decision support on a global scale. \n With a global outlook and a commitment to excellence, his profile embodies the perfect blend of technical expertise and strategic acumen to drive business success in today's competitive landscape.`,
+    linkedin: "https://in.linkedin.com/in/ca-ayush-ahuja-39a34b1a7",
+  },
   // {
   //   name: "Sylvia Mortisova - BusDee",
   //   position: "Talent Advisor, Founder",

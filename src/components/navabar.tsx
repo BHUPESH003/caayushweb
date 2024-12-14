@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const location = useLocation();
 
   const menuItems = [
     { title: "Who We Are", path: "/who-we-are" },
@@ -18,6 +20,14 @@ export function Navbar() {
     setIsOpen(!isOpen);
     console.log(isOpen);
   };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [location.pathname === "/messages"]);
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/95">
       <div className="container mx-auto px-4">
@@ -37,11 +47,19 @@ export function Navbar() {
                 {item.title}
               </Link>
             ))}
-            <Link to="/login">
-              <Button variant="outline" className="text-black border-white">
-                Log In
-              </Button>
-            </Link>
+            {isAuthenticated ? (
+              <Link to="/messages">
+                <Button variant="outline" className="text-black border-white">
+                  Dashboard
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <Button variant="outline" className="text-black border-white">
+                  Log In
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,14 +87,24 @@ export function Navbar() {
                 {item.title}
               </Link>
             ))}
-            <Link to="/login" onClick={() => setIsOpen(false)}>
-              <Button
-                variant="outline"
-                className="text-black border-white text-2xl"
+            {isAuthenticated ? (
+              <Link
+                to="/messages"
+                className="text-white text-2xl hover:text-gray-300 transition-colors"
+                onClick={() => setIsOpen(false)}
               >
-                Log In
-              </Button>
-            </Link>
+                Dashboard
+              </Link>
+            ) : (
+              <Link to="/login" onClick={() => setIsOpen(false)}>
+                <Button
+                  variant="outline"
+                  className="text-black border-white text-2xl"
+                >
+                  Log In
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       )}
