@@ -6,14 +6,14 @@ export function Footer() {
           <h3 className="text-xl font-semibold mb-4">
             AYUSH AHUJA <br />& CO.
           </h3>
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <h4 className="text-lg mb-2">Join The Success!</h4>
             <input
               type="email"
               placeholder="Email Now"
               className="bg-transparent border border-white/20 px-4 py-2 w-full max-w-xs"
             />
-          </div>
+          </div> */}
         </div>
 
         <div>

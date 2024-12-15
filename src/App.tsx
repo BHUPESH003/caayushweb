@@ -11,6 +11,7 @@ import { WhoWeArePage } from "./pages/who-we-are";
 import { TeamPage } from "./pages/our-team";
 import { MessagesPage } from "./pages/messages";
 import { LoginPage } from "./pages/login";
+import Contact from "./pages/contact";
 
 const isAuthenticated = () => !!localStorage.getItem("token");
 
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/who-we-are" element={<WhoWeArePage />} />
           <Route path="/team" element={<TeamPage />} />{" "}
           <Route path="/login" element={<LoginPage />} />{" "}
+          <Route path="/contact" element={<Contact />} />
           <Route
             path="/messages"
             element={

@@ -12,9 +12,9 @@ export function Navbar() {
   const menuItems = [
     { title: "Who We Are", path: "/who-we-are" },
     // { title: "Our Services", path: "/services" },
-    { title: "Learning Modules", path: "/" },
+    // { title: "Learning Modules", path: "/" },
     { title: "Our Team", path: "/team" },
-    { title: "Contact", path: "/" },
+    { title: "Contact", path: "/contact" },
   ];
 
   const handleClick = () => {

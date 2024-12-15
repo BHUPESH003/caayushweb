@@ -7,14 +7,17 @@ import AyushImg from "../assets/Ayush_Ahuja.jpeg";
 import TextInput from "@/components/ui/TextInput";
 import { useState } from "react";
 import axios from "axios";
+import { Icons } from "@/components/ui/icons";
 
 export function HomePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
     if (!name || !email || !message) {
       alert("Please fill in all fields.");
       return;
@@ -48,6 +51,8 @@ export function HomePage() {
         error.response?.data || error.message
       );
       alert("Failed to submit the form. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -81,7 +86,7 @@ export function HomePage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              'url("https://caayushandco.s3.ap-south-1.amazonaws.com/assets/home_building.avif")',
+              'url("https://s3.ap-south-1.amazonaws.com/caayushandco.com/home_building.jpg")',
             opacity: 0.5,
           }}
         />
@@ -92,9 +97,11 @@ export function HomePage() {
           <p className="text-xl mb-8">
             The destination for leaders who seek to change the world
           </p>
-          <Button variant="outline" className="text-black border-white">
-            Get in Touch
-          </Button>
+          <Link to={"/contact"}>
+            <Button variant="outline" className="text-black border-white">
+              Get in Touch
+            </Button>
+          </Link>
 
           <div className="mt-12 max-w-md">
             <h3 className="text-xl mb-4">Subscribe for Updates</h3>
@@ -119,6 +126,9 @@ export function HomePage() {
                 placeholder="Enter your Message"
               />
               <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                {isLoading && (
+                  <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                )}
                 Subscribe
               </Button>
             </form>
